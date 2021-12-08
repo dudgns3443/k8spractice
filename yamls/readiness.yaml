@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: readiness
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        name: apache
+        app: web
+        rel: stable
+    spec:
+      containers:
+      - name: httpd
+        image: httpd:2.4
+        ports:
+        - containerPort : 80
+        readinessProbe:
+          #httpGet:
+          exec:
+            command:
+            - ls
+            - /var/datafile
+          #tcpSocket:
+        #livenessProbe:

@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    rel: beta
+    run: nginx
+  name: nginx
+spec:
+  containers:
+  - image: nginx:1.14
+    name: nginx-container
+    ports:
+    - containerPort: 80
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

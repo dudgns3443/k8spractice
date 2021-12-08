@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: ds-mainui
+  annotations:
+    kubernetes.io/change-cause: version 1.15
+spec:
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+      - name: web-container
+        image: httpd:2.2
+        ports: 
+        - containerPort: 80
+        resources:
+          requests:
+            cpu: 500m
+      nodeSelector:
+        disktype: ssd

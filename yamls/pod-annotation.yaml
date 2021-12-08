@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: login
+    rel: stable
+  annotations:
+    auth: "younghunkim"
+  name: appjs-annotation
+spec:
+  containers:
+  - name: appjs-container
+    image: smlinux/appjs
+    ports:
+    - containerPort: 8080
