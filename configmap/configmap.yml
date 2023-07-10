@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  DB_ADDRESS: 10.0.0.1
+  env: dev
+kind: ConfigMap
+metadata:
+  creationTimestamp: "2023-07-07T08:24:08Z"
+  name: dev.env
+  namespace: dev
+  resourceVersion: "87577"
+  uid: 4486c6a4-0a13-40ef-bcc5-3c044c9b6817
+
